@@ -10,7 +10,6 @@ openldap_bind_user: '{{ openldap_admin_user }}'
 openldap_debian_packages:
   - slapd
   - ldap-utils
-  - phpldapadmin
 openldap_organizationalunits:  #defines OU's to populate
   - People
   - Groups

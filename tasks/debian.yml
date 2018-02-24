@@ -25,6 +25,18 @@
       value: "{{ openldap_org }}"
       vtype: 'string'
 
+- name: debian | installing phpldapadmin
+  apt:
+    name: phpldapadmin
+    state: present
+  when: ansible_distribution_version < 9
+
+- name: debian | installing phpldapadmin
+  apt:
+    deb: http://http.us.debian.org/debian/pool/main/p/phpldapadmin/phpldapadmin_1.2.2-6.1_all.deb
+    force: yes
+  when: ansible_distribution_version >= 9
+
 - name: debian | installing packages
   apt:
     name: "{{ item }}"
