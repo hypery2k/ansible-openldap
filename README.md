@@ -1,33 +1,17 @@
-Role Name
-=========
+# Setup OpenLDAP on Debian
 
-Installs and configures OpenLDAP and phpLDAPadmin  
-http://www.openldap.org/
+[![Build Status](https://travis-ci.org/hypery2k/ansible-openldap.svg?branch=master)](https://travis-ci.org/hypery2k/ansible-openldap)
 
-Requirements
-------------
+Installs and configures OpenLDAP and phpLDAPadmin, see http://www.openldap.org/
+
+## Requirements
 
 Install requirements using Ansible Galaxy.
 ````
 sudo ansible-galaxy install -r requirements.yml -f
 ````
 
-Vagrant
--------
-Spin up Vagrant environment
-````
-vagrant up
-````
-
-Log into phpLDAPadmin  
-http://127.0.0.1:8080/phpldapadmin
-````
-user: cn=admin,dc=vagrant,dc=local
-password: P@55w0rd
-````
-
-Role Variables
---------------
+## Role Variables
 
 ````
 ---
@@ -63,17 +47,15 @@ openldap_users:
 pri_domain_name: 'example.org'
 ````
 
-Dependencies
-------------
+## Dependencies
 
 Install via info in requirements  
 ansible-etc-hosts
 
 
-Example Playbook
-----------------
+## Example Playbook
 
-#### GitHub
+### GitHub
 ````
 ---
 - hosts: all
@@ -86,7 +68,7 @@ Example Playbook
     - role: ansible-openldap
   tasks:
 ````
-#### Galaxy
+### Galaxy
 ````
 ---
 - hosts: all
@@ -100,15 +82,28 @@ Example Playbook
   tasks:
 ````
 
-License
--------
+## Development
+
+### Vagrant
+
+Spin up Vagrant environment
+````
+vagrant up
+````
+
+Log into phpLDAPadmin  
+http://127.0.0.1:8080/phpldapadmin
+````
+user: cn=admin,dc=vagrant,dc=local
+password: P@55w0rd
+````
+
+## License
 
 BSD
 
-Author Information
-------------------
+## Author Information
 
-Larry Smith Jr.
-- @mrlesmithjr
-- http://everythingshouldbevirtual.com
-- mrlesmithjr [at] gmail.com
+Martin Reinhardt
+
+Based on the work of Larry Smith Jr. (@mrlesmithjr)
